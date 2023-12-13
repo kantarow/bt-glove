@@ -1,0 +1,23 @@
+{
+  "name": "BTGlove",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "description": "Developer tool for BT A-500",
+  "permissions": ["storage", "declarativeContent", "activeTab", "scripting"],
+  "web_accessible_resources": [
+    {
+      "resources": ["injection.js"],
+      "matches": ["http://*/*", "https://*/*"]
+    }
+  ],
+  "content_scripts": [{
+    "run_at": "document_start",
+    "matches": ["http://*/*", "https://*/*"],
+    "js": [
+      "content_script.js"
+    ]
+  }],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
